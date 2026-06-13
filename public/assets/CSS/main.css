@@ -1,1 +1,67 @@
-
+:root {
+  --bg: #0b1020;
+  --panel: rgba(18, 24, 45, 0.84);
+  --border: rgba(255,255,255,0.12);
+  --text: #edf2ff;
+  --muted: #97a6c6;
+  --accent: #78a6ff;
+  --accent2: #8e5eff;
+  --shadow: 0 20px 50px rgba(0,0,0,.35);
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: Inter, system-ui, sans-serif;
+  color: var(--text);
+  background:
+    radial-gradient(circle at top left, rgba(120,166,255,.18), transparent 30%),
+    radial-gradient(circle at top right, rgba(142,94,255,.18), transparent 28%),
+    linear-gradient(180deg, #070b16, var(--bg));
+  min-height: 100vh;
+}
+a { color: inherit; text-decoration: none; }
+.shell { max-width: 1200px; margin: 0 auto; padding: 18px; }
+.topbar {
+  display: flex; justify-content: space-between; align-items: center;
+  gap: 16px; padding: 14px 18px; border: 1px solid var(--border);
+  background: var(--panel); border-radius: 20px; box-shadow: var(--shadow);
+}
+.brand { display: flex; gap: 14px; align-items: center; }
+.logo {
+  width: 48px; height: 48px; border-radius: 16px; display: grid; place-items: center;
+  background: linear-gradient(135deg, var(--accent), var(--accent2));
+  font-weight: 800;
+}
+.title { font-weight: 800; font-size: 1.06rem; }
+.subtitle, .nav a { color: var(--muted); font-size: .92rem; }
+.nav { display: flex; gap: 14px; flex-wrap: wrap; }
+.content { padding: 20px 0; }
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 16px; }
+.card, .auth-card {
+  border: 1px solid var(--border);
+  background: var(--panel);
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: var(--shadow);
+}
+.hero h1, .card h2, .card h3, .auth-card h1 { margin-top: 0; }
+.stack { display: grid; gap: 10px; }
+input, textarea, select, button, .btn {
+  width: 100%; padding: 12px 14px; border-radius: 14px;
+  border: 1px solid var(--border); background: rgba(255,255,255,.04);
+  color: var(--text);
+}
+button, .btn {
+  cursor: pointer; font-weight: 700;
+  background: linear-gradient(135deg, var(--accent), var(--accent2));
+  border: none;
+}
+.btn.secondary { background: transparent; border: 1px solid var(--border); }
+.actions { display: flex; gap: 10px; flex-wrap: wrap; }
+.alert {
+  padding: 12px 14px; background: rgba(255, 82, 82, 0.15);
+  border: 1px solid rgba(255,82,82,.35); border-radius: 14px; margin-bottom: 12px;
+}
+.auth-card {
+  max-width: 440px; margin: 60px auto;
+}
